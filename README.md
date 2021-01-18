@@ -13,6 +13,18 @@ Docker compose will generate 2 containers: the first with the PostgreSQL DB cont
 the second with the spring-boot backend solution.
 The test cases will generate (and delete, once tests are finished) sample hiker data to test the endpoint operations.
 
+A Postman colleciton is available to test-out application functionalities
+
+<p align="center">
+<img width="50%" src="screen_2.png">
+</p>
+
+The API implements also swagger documentation
+
+<p align="center">
+<img width="50%" src="screen_1.png">
+</p>
+
 <h2>COMMANDS</h2>
 
 Start docker Hiking API containers (must be in project working directory):
