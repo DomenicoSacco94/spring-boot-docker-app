@@ -1,0 +1,26 @@
+version: '3'
+services:
+  postgres-db:
+    container_name: postgres-db
+    image: postgres:latest
+    restart: always
+    ports:
+      - "5432:5432"
+    expose:
+      - "5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: admin123?
+      POSTGRES_DB: hiking_db
+  hiking-api:
+    container_name: hiking-app
+    image: java:8
+    restart: always
+    depends_on:
+      - postgres-db
+    volumes:
+      - .:/var/www/html
+    ports:
+      - "8080:8080"
+    working_dir: /var/www/html
+    command: bash -c "java -jar target/hiking-0.1.jar"

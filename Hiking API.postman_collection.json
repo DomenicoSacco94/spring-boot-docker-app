@@ -1,0 +1,229 @@
+{
+	"info": {
+		"_postman_id": "3ac273c1-98f9-47e4-bc0b-8cff044c2c75",
+		"name": "Hiking API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Delete Hiker",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/hiking/v1/hiker/6d4ac78d-a56f-44b0-adc8-70e38b6fdc39",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"hiking",
+						"v1",
+						"hiker",
+						"6d4ac78d-a56f-44b0-adc8-70e38b6fdc39"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Hiker",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n                \"hikerId\": \"6d4ac78d-a56f-44b0-adc8-70e38b6fdc46\",\r\n                \"name\": \"name3\",\r\n                \"surname\": \"surname3\",\r\n                \"mail\": \"test3@mail.com\",\r\n                \"age\": 18\r\n            }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/hiking/v1/hiker/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"hiking",
+						"v1",
+						"hiker",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Hikers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/hiking/v1/hikers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"hiking",
+						"v1",
+						"hikers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Hiker",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/hiking/v1/hiker/9c8145d5-034e-46d7-a2d5-7c571111b397",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"hiking",
+						"v1",
+						"hiker",
+						"9c8145d5-034e-46d7-a2d5-7c571111b397"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Trails",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/hiking/v1/trails",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"hiking",
+						"v1",
+						"trails"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create booking",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"bookingId\": \"c67bca77-d183-4139-ae9f-3bf3f8c8d0cb\",\r\n        \"hikerId\": \"2e41ac4d-590e-4b67-902b-ec261b634755\",\r\n        \"bookingDate\": \"2020-07-01\",\r\n        \"trail\": {\r\n            \"trailId\": \"ac43d61a-9a62-4151-9448-f4b09dba6b54\",\r\n            \"name\": \"Gondor\",\r\n            \"price\": 59.9,\r\n            \"minAge\": 11,\r\n            \"maxAge\": 50,\r\n            \"startTrail\": \"10:00:00\",\r\n            \"endTrail\": \"13:00:00\"\r\n        },\r\n        \"bookMembers\": [\r\n            {\r\n                \"hikerId\": \"9c8145d5-034e-46d7-a2d5-7c571111b397\",\r\n                \"name\": \"name3\",\r\n                \"surname\": \"surname3\",\r\n                \"mail\": \"test3@mail.com\",\r\n                \"age\": 10\r\n            }\r\n        ]\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/hiking/v1/booking?hikerId=9c8145d5-034e-46d7-a2d5-7c571111b397&trailId=ac43d61a-9a62-4151-9448-f4b09dba6b54",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"hiking",
+						"v1",
+						"booking"
+					],
+					"query": [
+						{
+							"key": "hikerId",
+							"value": "9c8145d5-034e-46d7-a2d5-7c571111b397"
+						},
+						{
+							"key": "trailId",
+							"value": "ac43d61a-9a62-4151-9448-f4b09dba6b54"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get booking For Hiker",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/hiking/v1/booking?hikerId=9c8145d5-034e-46d7-a2d5-7c571111b397",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"hiking",
+						"v1",
+						"booking"
+					],
+					"query": [
+						{
+							"key": "hikerId",
+							"value": "9c8145d5-034e-46d7-a2d5-7c571111b397"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get booking For date",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/hiking/v1/booking?date=2020-07-01",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"hiking",
+						"v1",
+						"booking"
+					],
+					"query": [
+						{
+							"key": "date",
+							"value": "2020-07-01"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

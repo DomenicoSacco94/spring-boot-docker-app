@@ -1,0 +1,27 @@
+logging:
+  level:
+    root: INFO
+  pattern:
+    console: "%clr(timestamp=%d){faint} %clr(thread=%t) %clr(loglevel=%-5p){magenta}%clr(class=%c){faint} %clr(appname=${info.app.name:-}) %clr(traceid=%X{X-B3-TraceId:-}){magenta}%clr(spanid=%X{X-B3-SpanId:-}){cyan} %clr(message=%m%n){faint}"
+spring:
+  devtools:
+    add-properties: true
+  h2:
+    console:
+      enabled: true
+  jpa:
+    open-in-view: true
+  datasource:
+    tomcat:
+      validation-query: SELECT 1
+      test-on-borrow: true
+      validation-interval: 30000 # 30s
+server:
+  port: 8080
+
+database:
+  user: "postgres"
+  host: "postgres-db"
+  port: 5432
+  name: hiking_db
+  password: "admin123?"
